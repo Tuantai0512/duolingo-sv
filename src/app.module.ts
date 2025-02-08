@@ -11,11 +11,13 @@ import { JwtAuthGuard } from './auth/passport/jwt-auth.guard';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { TransformInterceptor } from './core/transform.interceptor';
+import { UserProgressModule } from './modules/user-progress/user-progress.module';
 
 @Module({
   imports: [
     CoursesModule,
     UsersModule,
+    UserProgressModule,
     ConfigModule.forRoot({ isGlobal: true }),
     AuthModule,
     MongooseModule.forRootAsync({
